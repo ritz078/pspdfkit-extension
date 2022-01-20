@@ -8,7 +8,7 @@
     "url": "https://github.com/lxieyang/chrome-extension-boilerplate-react.git"
   },
   "scripts": {
-    "copy": "cp -R ./node_modules/pspdfkit/dist/ ./src/assets/",
+    "copy": "mkdir src/assets/pspdfkit && cp -R ./node_modules/pspdfkit/dist/ ./src/assets/pspdfkit",
     "build": "npm run copy && node utils/build.js",
     "start": "npm run copy && node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
