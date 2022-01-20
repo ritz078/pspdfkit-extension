@@ -1,12 +1,8 @@
 {
-  "name": "chrome-extension-boilerplate-react",
-  "version": "4.2.0",
-  "description": "A chrome extension boilerplate built with React 17, Webpack 5, and Webpack Dev Server 4",
+  "name": "pspdfkit-chrome-extension",
+  "version": "1.0.0",
+  "description": "A PDF Viewer chrome extension powered by PSPDFKit",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lxieyang/chrome-extension-boilerplate-react.git"
-  },
   "scripts": {
     "copy": "mkdir src/assets/pspdfkit && cp -R ./node_modules/pspdfkit/dist/ ./src/assets/pspdfkit",
     "build": "npm run copy && node utils/build.js",
