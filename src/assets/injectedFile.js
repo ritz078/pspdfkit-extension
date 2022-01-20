@@ -17,6 +17,5 @@ const loadScript = function (url) {
     document: window.location.href,
     container: document.getElementById('hello'),
     baseUrl: `${baseUrl}pspdfkit/`,
-    disableWebAssembly: true,
   });
 })();
