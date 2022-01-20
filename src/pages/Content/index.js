@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { render } from 'react-dom';
 
-const isPDF = window.location.href.endsWith('.pdf');
+const isPDF =
+  window.location.href.endsWith('.pdf') ||
+  (window.location.href.startsWith(
+    'https://pspdfkit.zendesk.com/attachments'
+  ) &&
+    window.location.href.endsWith('.pdf'));
 
 const App = () => {
   useEffect(() => {
