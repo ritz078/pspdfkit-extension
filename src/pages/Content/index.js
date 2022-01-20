@@ -1,6 +1,29 @@
-import { printLine } from './modules/print';
+import React, { useEffect } from 'react';
+import { render } from 'react-dom';
 
-console.log('Content script works!');
-console.log('Must reload extension for modifications to take effect.');
+const isPDF = window.location.href.endsWith('.pdf');
 
-printLine("Using the 'printLine' function from the Print Module");
+const App = () => {
+  useEffect(() => {
+    var s = document.createElement('script');
+    s.src = chrome.runtime.getURL('injectedFile.js');
+    (document.head || document.documentElement).appendChild(s);
+    s.onload = function () {
+      s.remove();
+    };
+  }, []);
+
+  return (
+    <div
+      id="hello"
+      style={{
+        height: '100vh',
+        width: '100vw',
+      }}
+    />
+  );
+};
+
+if (isPDF) {
+  render(<App />, document.getElementsByTagName('body')[0]);
+}

@@ -8,12 +8,14 @@
     "url": "https://github.com/lxieyang/chrome-extension-boilerplate-react.git"
   },
   "scripts": {
-    "build": "node utils/build.js",
-    "start": "node utils/webserver.js",
+    "copy": "cp -R ./node_modules/pspdfkit/dist/ ./src/assets/",
+    "build": "npm run copy && node utils/build.js",
+    "start": "npm run copy && node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^17.0.1",
+    "pspdfkit": "2022.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0"
@@ -41,7 +43,6 @@
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",
     "html-loader": "^3.0.0",
-    "html-webpack-plugin": "^5.5.0",
     "node-sass": "^6.0.1",
     "prettier": "^2.4.1",
     "sass-loader": "^12.2.0",
