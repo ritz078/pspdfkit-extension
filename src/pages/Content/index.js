@@ -25,5 +25,12 @@ const App = () => {
 };
 
 if (isPDF) {
-  render(<App />, document.getElementsByTagName('body')[0]);
+  while (document.body.firstChild) {
+    document.body.removeChild(document.body.firstChild);
+  }
+
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+
+  render(<App />, div);
 }
