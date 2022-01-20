@@ -4,7 +4,7 @@
   "description": "A PDF Viewer chrome extension powered by PSPDFKit",
   "license": "MIT",
   "scripts": {
-    "copy": "mkdir src/assets/pspdfkit && cp -R ./node_modules/pspdfkit/dist/ ./src/assets/pspdfkit",
+    "copy": "rm -rf src/assets/pspdfkit && mkdir src/assets/pspdfkit && cp -R ./node_modules/pspdfkit/dist/ ./src/assets/pspdfkit",
     "build": "npm run copy && node utils/build.js",
     "start": "npm run copy && node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"

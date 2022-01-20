@@ -19,7 +19,9 @@
         "icon-34.png",
         "*.js",
         "*.css",
-        "*.wasm"
+        "*.wasm",
+        "*.woff",
+        "*.woff2"
       ],
       "matches": ["http://*/*", "https://*/*", "<all_urls>"]
     }
